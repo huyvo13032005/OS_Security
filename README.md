@@ -1,4 +1,4 @@
-# 🛡️ Operating System Security Labs
+#  Operating System Security Labs
 
 This repository contains my hands-on practice and writeups related to **Operating System Security**, focusing on:
 
@@ -11,13 +11,13 @@ These labs are performed in a Linux environment (Kali/Ubuntu) for educational an
 
 ---
 
-# 📌 Lab 1: Discretionary Access Control (DAC)
+#  Lab 1: Discretionary Access Control (DAC)
 
-## 🎯 Objective
+##  Objective
 
 Understand how Linux file permissions work and how improper DAC configuration can lead to privilege escalation.
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 * File ownership
 * Read / Write / Execute permissions
@@ -25,7 +25,7 @@ Understand how Linux file permissions work and how improper DAC configuration ca
 * SUID bit
 * Privilege escalation via misconfigured files
 
-## 🔬 Example
+##  Example
 
 ```bash
 ls -l file
@@ -33,7 +33,7 @@ chmod 777 file
 chmod u+s binary
 ```
 
-## ⚠️ Vulnerability
+##  Vulnerability
 
 If a binary owned by root has SUID enabled and is writable, a normal user may escalate privileges.
 
@@ -43,7 +43,7 @@ Example:
 -rwsrwxrwx 1 root root vulnerable_binary
 ```
 
-## 🚨 Exploitation
+##  Exploitation
 
 User modifies binary and executes it:
 
@@ -55,20 +55,20 @@ Result: privilege escalation to root.
 
 ---
 
-# 📌 Lab 2: Race Condition
+#  Lab 2: Race Condition
 
-## 🎯 Objective
+##  Objective
 
 Exploit timing vulnerability when a program checks a file before using it.
 
-## 🧠 Concepts Covered
+##  Concepts Covered
 
 * TOCTOU (Time Of Check To Time Of Use)
 * Symbolic links
 * File replacement attack
 * Privilege escalation
 
-## 🔬 Vulnerable Code Example
+##  Vulnerable Code Example
 
 ```c
 if(access("file", W_OK) == 0){
@@ -79,7 +79,7 @@ if(access("file", W_OK) == 0){
 
 Between `access()` and `fopen()` attacker replaces the file.
 
-## ⚙️ Exploit Steps
+##  Exploit Steps
 
 ### 1. Create symbolic link
 
@@ -101,13 +101,13 @@ done
 ./vulnerable_program
 ```
 
-## 💥 Result
+##  Result
 
 Attacker modifies protected system file.
 
 ---
 
-# 📌 Lab 3: Operating System Security Concepts
+#  Lab 3: Operating System Security Concepts
 
 ## Topics Covered
 
@@ -134,7 +134,7 @@ chmod 755 file
 
 ---
 
-# 🧪 Environment
+#  Environment
 
 * Kali Linux
 * GCC / Clang
@@ -150,7 +150,7 @@ sudo apt install gcc clang -y
 
 ---
 
-# 🎓 Learning Outcomes
+#  Learning Outcomes
 
 After completing these labs, I understood:
 
@@ -161,13 +161,13 @@ After completing these labs, I understood:
 
 ---
 
-# ⚠️ Disclaimer
+#  Disclaimer
 
 This repository is for **educational purposes only**.
 All experiments were conducted in controlled lab environments.
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 CTF Player | Cybersecurity Student | OS Security Learner
